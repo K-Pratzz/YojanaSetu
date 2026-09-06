@@ -3,133 +3,298 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Yojana Setu — Government Scheme Eligibility Checker</title>
+<title>Yojana Setu — Find the Government Schemes You Qualify For</title>
+<meta name="description" content="A free, private, rule-based tool that instantly checks which Indian government welfare schemes you're eligible for. No sign-up, no data collection." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<div class="grain"></div>
 
-  <div class="grain"></div>
+<!-- ============ NAV ============ -->
+<nav class="site-nav">
+  <div class="site-nav__inner">
+    <a href="index.html" class="brand">
+      <span class="brand__mark"><svg width="30" height="30" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M24 10 L36 18 V30 L24 38 L12 30 V18 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="24" r="4" fill="currentColor"/></svg></span>
+      <span class="brand__name">Yojana Setu</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="checker.html">Check Eligibility</a></li>
+      <li><a href="schemes.html">Browse Schemes</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Feedback</a></li>
+      <li><a href="checker.html" class="nav-cta">Get Started</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</nav>
 
-  <header class="masthead">
-    <div class="masthead__inner">
-      <div class="masthead__mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48" width="34" height="34">
-          <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M24 10 L36 18 V30 L24 38 L12 30 V18 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="24" cy="24" r="4" fill="currentColor"/>
-        </svg>
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container hero__inner">
+    <div>
+      <p class="eyebrow">CS002 Community Service Project · SDG 1 &amp; SDG 10</p>
+      <h1>Find the government scheme <em>you already qualify for.</em></h1>
+      <p class="lede">Yojana Setu checks your age, income and occupation against 22 major Indian welfare schemes in seconds — entirely in your browser. No forms sent anywhere, no waiting in line to find out.</p>
+      <div class="hero__actions">
+        <a href="checker.html" class="btn btn-primary">Check my eligibility <svg viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="schemes.html" class="btn btn-outline">Browse all schemes</a>
       </div>
-      <div class="masthead__text">
-        <p class="eyebrow">A Community Services (CS002) Build</p>
-        <h1>Yojana Setu</h1>
-        <p class="tagline">Bridge to the government scheme you already qualify for.</p>
+      <div class="hero__trust">
+        <span><svg viewBox="0 0 24 24" fill="none"><path d="M5 13L10 18L19 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Nothing you enter is stored or sent</span>
+        <span><svg viewBox="0 0 24 24" fill="none"><path d="M5 13L10 18L19 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Takes under a minute</span>
+        <span><svg viewBox="0 0 24 24" fill="none"><path d="M5 13L10 18L19 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Free, always</span>
       </div>
     </div>
-  </header>
 
-  <main class="layout">
+    <div class="hero__art" aria-hidden="true">
+      <svg viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- sun / emblem -->
+        <circle cx="240" cy="90" r="38" stroke="#DE9440" stroke-width="1.6"/>
+        <circle cx="240" cy="90" r="6" fill="#DE9440"/>
+        <g stroke="#DE9440" stroke-width="1.4" stroke-linecap="round">
+          <line x1="240" y1="32" x2="240" y2="20"/>
+          <line x1="240" y1="160" x2="240" y2="148"/>
+          <line x1="180" y1="90" x2="168" y2="90"/>
+          <line x1="312" y1="90" x2="300" y2="90"/>
+          <line x1="197" y1="47" x2="189" y2="39"/>
+          <line x1="291" y1="141" x2="283" y2="133"/>
+          <line x1="283" y1="47" x2="291" y2="39"/>
+          <line x1="189" y1="141" x2="197" y2="133"/>
+        </g>
 
-    <!-- FORM -->
-    <section class="panel form-panel" aria-labelledby="form-heading">
-      <h2 id="form-heading">Tell us about you</h2>
-      <p class="panel-sub">Nothing here is stored or sent anywhere — the check runs entirely in your browser.</p>
+        <!-- two riverbanks -->
+        <path d="M20 300C20 300 90 260 240 260C390 260 460 300 460 300V340C460 340 390 300 240 300C90 300 20 340 20 340V300Z" fill="#F1EBDD" stroke="#D9D0BC" stroke-width="1.2"/>
 
-      <form id="eligibility-form" novalidate>
+        <!-- bridge arc -->
+        <path d="M60 300C60 220 140 190 240 190C340 190 420 220 420 300" stroke="#17384A" stroke-width="2.2" stroke-linecap="round"/>
+        <g stroke="#17384A" stroke-width="1.6" stroke-linecap="round">
+          <line x1="90" y1="300" x2="90" y2="272"/>
+          <line x1="130" y1="300" x2="130" y2="250"/>
+          <line x1="170" y1="300" x2="170" y2="232"/>
+          <line x1="210" y1="300" x2="210" y2="220"/>
+          <line x1="270" y1="300" x2="270" y2="220"/>
+          <line x1="310" y1="300" x2="310" y2="232"/>
+          <line x1="350" y1="300" x2="350" y2="250"/>
+          <line x1="390" y1="300" x2="390" y2="272"/>
+        </g>
+        <line x1="60" y1="300" x2="420" y2="300" stroke="#17384A" stroke-width="2.2" stroke-linecap="round"/>
 
-        <div class="field">
-          <label for="age">Age</label>
-          <input type="number" id="age" name="age" min="0" max="110" placeholder="e.g. 29" required />
-        </div>
+        <!-- left bank: document / scheme -->
+        <g transform="translate(78, 305)">
+          <rect x="0" y="0" width="52" height="64" rx="4" fill="#fff" stroke="#17384A" stroke-width="1.6"/>
+          <line x1="10" y1="16" x2="42" y2="16" stroke="#DE9440" stroke-width="2" stroke-linecap="round"/>
+          <line x1="10" y1="28" x2="42" y2="28" stroke="#D9D0BC" stroke-width="2" stroke-linecap="round"/>
+          <line x1="10" y1="38" x2="34" y2="38" stroke="#D9D0BC" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 50L20 58L40 40" stroke="#3B7A5A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
 
-        <div class="field">
-          <label for="income">Annual family income (₹)</label>
-          <input type="number" id="income" name="income" min="0" step="1000" placeholder="e.g. 180000" required />
-        </div>
+        <!-- right bank: family / citizens -->
+        <g transform="translate(330, 300)">
+          <circle cx="14" cy="14" r="9" fill="#fff" stroke="#17384A" stroke-width="1.6"/>
+          <path d="M0 42C0 30 6 24 14 24C22 24 28 30 28 42" fill="#fff" stroke="#17384A" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="42" cy="10" r="7" fill="#fff" stroke="#17384A" stroke-width="1.4"/>
+          <path d="M30 38C30 28 35 23 42 23C49 23 54 28 54 38" fill="#fff" stroke="#17384A" stroke-width="1.4" stroke-linecap="round"/>
+        </g>
 
-        <div class="field">
-          <label for="occupation">Occupation</label>
-          <select id="occupation" name="occupation" required>
-            <option value="" disabled selected>Select occupation</option>
-            <option value="farmer">Farmer / agricultural worker</option>
-            <option value="student">Student</option>
-            <option value="unemployed">Unemployed / job-seeking</option>
-            <option value="daily_wage">Daily-wage / unorganised-sector worker</option>
-            <option value="self_employed">Self-employed / small business owner</option>
-            <option value="salaried">Salaried (private or govt)</option>
-            <option value="homemaker">Homemaker</option>
-            <option value="retired">Retired / not working</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+        <!-- floating leaves / birds accent -->
+        <path d="M410 130C416 126 424 128 426 134" stroke="#3B7A5A" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M425 145C431 141 439 143 441 149" stroke="#3B7A5A" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M55 130C49 126 41 128 39 134" stroke="#B96F22" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</header>
 
-        <div class="field">
-          <label for="gender">Gender</label>
-          <select id="gender" name="gender" required>
-            <option value="" disabled selected>Select gender</option>
-            <option value="female">Female</option>
-            <option value="male">Male</option>
-            <option value="other">Other / prefer not to say</option>
-          </select>
-        </div>
+<!-- ============ STATS ============ -->
+<section class="stats-band">
+  <div class="container stats-grid">
+    <div><div class="stat-num">22</div><div class="stat-label">Schemes covered</div></div>
+    <div><div class="stat-num">13</div><div class="stat-label">Categories, agriculture to pensions</div></div>
+    <div><div class="stat-num">0</div><div class="stat-label">Bytes of your data stored on a server</div></div>
+    <div><div class="stat-num">&lt;60s</div><div class="stat-label">Average time to a result</div></div>
+  </div>
+</section>
 
-        <div class="field">
-          <label for="state">State / UT</label>
-          <select id="state" name="state">
-            <option value="all">All India</option>
-            <option value="haryana">Haryana</option>
-            <option value="up">Uttar Pradesh</option>
-            <option value="rajasthan">Rajasthan</option>
-            <option value="delhi">Delhi</option>
-            <option value="other">Other state</option>
-          </select>
-          <p class="field-hint">Only a few schemes are state-specific — most are nationwide.</p>
-        </div>
-
-        <div class="field field--checkbox">
-          <input type="checkbox" id="hasLand" name="hasLand" />
-          <label for="hasLand">My family owns cultivable agricultural land</label>
-        </div>
-
-        <button type="submit" class="btn-primary">Check my eligibility</button>
-        <button type="button" class="btn-ghost" id="reset-btn">Clear form</button>
-      </form>
-    </section>
-
-    <!-- RESULTS -->
-    <section class="panel results-panel" aria-labelledby="results-heading" aria-live="polite">
-      <div class="results-header">
-        <h2 id="results-heading">Your matches</h2>
-        <span class="results-count" id="results-count">—</span>
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow" style="justify-content:center">How it works</p>
+      <h2>Three steps, zero paperwork</h2>
+      <p>No account, no OTP, no document upload. Just tell us a little about yourself and get a straight answer.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step__num">01</div>
+        <h3>Answer five quick questions</h3>
+        <p>Age, income, occupation, gender and state — the same details every scheme actually checks for.</p>
       </div>
+      <div class="step">
+        <div class="step__num">02</div>
+        <h3>Our rule engine checks instantly</h3>
+        <p>Plain if/else logic — not AI, not guesswork — compares your answers against each scheme's published criteria.</p>
+      </div>
+      <div class="step">
+        <div class="step__num">03</div>
+        <h3>See your matches, save what matters</h3>
+        <p>Get a ranked list with plain-language explainers, and bookmark the ones you want to act on later.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div id="results-empty" class="results-empty">
-        <div class="stamp-outline" aria-hidden="true">
-          <svg viewBox="0 0 80 80" width="56" height="56">
-            <circle cx="40" cy="40" r="36" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"/>
-            <path d="M28 40 L37 49 L54 30" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
+<!-- ============ CATEGORIES ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow" style="justify-content:center">Coverage</p>
+      <h2>Schemes across every stage of life</h2>
+      <p>From a farmer's first loan to a grandparent's pension — browse by what matters to you.</p>
+    </div>
+    <div class="feature-grid">
+      <a href="schemes.html?category=Agriculture" class="feature-card" style="text-decoration:none">
+        <div class="feature-card__icon">{{ICON_AGRI}}</div>
+        <h3>Agriculture</h3>
+        <p>Income support, crop insurance and credit for farming families.</p>
+      </a>
+      <a href="schemes.html?category=Healthcare" class="feature-card" style="text-decoration:none">
+        <div class="feature-card__icon">{{ICON_HEALTH}}</div>
+        <h3>Healthcare</h3>
+        <p>Hospital cover and clean-cooking support for low-income households.</p>
+      </a>
+      <a href="schemes.html?category=Education" class="feature-card" style="text-decoration:none">
+        <div class="feature-card__icon">{{ICON_EDU}}</div>
+        <h3>Education</h3>
+        <p>Scholarships and merit awards that keep students in school.</p>
+      </a>
+      <a href="schemes.html?category=Entrepreneurship" class="feature-card" style="text-decoration:none">
+        <div class="feature-card__icon">{{ICON_ENTRE}}</div>
+        <h3>Entrepreneurship</h3>
+        <p>Collateral-free loans for small businesses, vendors and artisans.</p>
+      </a>
+      <a href="schemes.html?category=Pension" class="feature-card" style="text-decoration:none">
+        <div class="feature-card__icon">{{ICON_PENSION}}</div>
+        <h3>Pension</h3>
+        <p>Guaranteed monthly income schemes for old age and retirement.</p>
+      </a>
+      <a href="schemes.html" class="feature-card" style="text-decoration:none">
+        <div class="feature-card__icon">{{ICON_ALL}}</div>
+        <h3>See all 13 categories</h3>
+        <p>Housing, financial inclusion, maternal welfare, food security and more.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED SCHEMES ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head left" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1rem; text-align:left; max-width:none;">
+      <div>
+        <p class="eyebrow">Popular</p>
+        <h2 style="margin-bottom:0;">A few schemes to start with</h2>
+      </div>
+      <a href="schemes.html" class="btn btn-ghost">View full directory →</a>
+    </div>
+    <div class="scheme-grid" id="featured-schemes"></div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Ready to see what you qualify for?</h2>
+      <p>It takes less time than reading one government notification — and you'll know exactly which schemes are worth your time.</p>
+      <div class="cta-band__actions">
+        <a href="checker.html" class="btn btn-accent">Check my eligibility now</a>
+        <a href="about.html" class="btn btn-outline" style="border-color:rgba(250,246,239,0.4); color:#FAF6EF;">Learn how it works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M24 10 L36 18 V30 L24 38 L12 30 V18 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="24" r="4" fill="currentColor"/></svg>
+          <span>Yojana Setu</span>
         </div>
-        <p>Fill the form and press <strong>Check my eligibility</strong> — matching schemes will be listed here as a ledger, like an official gazette entry.</p>
+        <p class="desc">A free, rule-based tool that helps citizens instantly check which government welfare schemes they qualify for — entirely in the browser.</p>
       </div>
-
-      <ol id="results-list" class="results-list" hidden></ol>
-
-      <div id="results-none" class="results-empty" hidden>
-        <p>No schemes matched these exact details. This checker covers a curated set of {SCHEME_COUNT} major schemes — try adjusting an answer, or see a caseworker at your nearest Common Service Centre (CSC) for a full assessment.</p>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="checker.html">Check Eligibility</a></li>
+          <li><a href="schemes.html">Browse Schemes</a></li>
+          <li><a href="about.html">About the Project</a></li>
+          <li><a href="contact.html">Feedback</a></li>
+        </ul>
       </div>
-    </section>
+      <div class="footer-col">
+        <h5>Project</h5>
+        <ul>
+          <li><a href="https://github.com/K-Pratzz/YojanaSetu" target="_blank" rel="noopener">GitHub Repository</a></li>
+          <li><a href="about.html#sdg">SDG Mapping</a></li>
+          <li><a href="about.html#methodology">Methodology</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Course</h5>
+        <ul>
+          <li>CS002 · Community Service</li>
+          <li>K.R. Mangalam University</li>
+          <li>School of Engineering &amp; Technology</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Yojana Setu · Built by Kumari Pratibha</span>
+      <span class="disclaimer">Eligibility rules are simplified for demonstration and awareness only — always verify against the scheme's official notification before applying.</span>
+    </div>
+  </div>
+</footer>
 
-  </main>
+<script src="js/icons.js"></script>
+<script src="js/schemes.js"></script>
+<script src="js/nav.js"></script>
+<script>
+  // Fill category icons
+  const featureGrid = document.querySelector('.feature-grid');
+  featureGrid.innerHTML = featureGrid.innerHTML
+    .replace('{{ICON_AGRI}}', ICONS['Agriculture'])
+    .replace('{{ICON_HEALTH}}', ICONS['Healthcare'])
+    .replace('{{ICON_EDU}}', ICONS['Education'])
+    .replace('{{ICON_ENTRE}}', ICONS['Entrepreneurship'])
+    .replace('{{ICON_PENSION}}', ICONS['Pension'])
+    .replace('{{ICON_ALL}}', ICONS['Rural Livelihood']);
 
-  <footer class="site-footer">
-    <p>Built for K.R. Mangalam University · CS002 Community Service Project · Digital &amp; Financial Inclusion (SDG 1, SDG 10)</p>
-    <p class="disclaimer">Eligibility rules are simplified for demonstration and awareness purposes only. Always verify against the scheme's official notification before applying.</p>
-  </footer>
-
-  <script src="schemes.js"></script>
-  <script src="script.js"></script>
+  // Featured schemes preview (first 3)
+  const featuredIds = ["pm-kisan", "pmjay", "mudra"];
+  const featured = featuredIds.map(id => SCHEMES.find(s => s.id === id)).filter(Boolean);
+  document.getElementById('featured-schemes').innerHTML = featured.map(scheme => `
+    <article class="scheme-tile" onclick="window.location.href='schemes.html'">
+      <div class="scheme-tile__top">
+        <div class="scheme-tile__icon">${ICONS[scheme.category] || ''}</div>
+      </div>
+      <div>
+        <p class="scheme-tile__category">${scheme.category}</p>
+        <h3 class="scheme-tile__name">${scheme.name}</h3>
+        <p class="scheme-tile__full">${scheme.fullName}</p>
+      </div>
+      <p class="scheme-tile__benefit">${scheme.benefit}</p>
+      <span class="scheme-tile__cta">View in directory ${UI_ICONS.arrow}</span>
+    </article>
+  `).join('');
+</script>
 </body>
 </html>

@@ -1,9 +1,7 @@
 /**
- * script.js
- * All client-side. No fetch, no backend, no build step —
- * open index.html directly (or via Live Server) and it works.
+ * checker.js
+ * All client-side. No fetch, no backend, no build step.
  */
-
 (function () {
   const form = document.getElementById("eligibility-form");
   const resetBtn = document.getElementById("reset-btn");
@@ -13,15 +11,9 @@
   const resultsList = document.getElementById("results-list");
   const resultsCount = document.getElementById("results-count");
 
-  // Fill the {SCHEME_COUNT} placeholder in the "no matches" message.
-  resultsNone.querySelector("p").textContent = resultsNone
-    .querySelector("p")
-    .textContent.replace("{SCHEME_COUNT}", SCHEMES.length);
+  const noneMsg = resultsNone.querySelector("p");
+  noneMsg.innerHTML = noneMsg.innerHTML.replace("{SCHEME_COUNT}", SCHEMES.length);
 
-  /**
-   * Pure rule-based matcher — no ML, no external calls.
-   * Returns true only if every rule present on the scheme passes.
-   */
   function isEligible(user, rules) {
     if (rules.minAge != null && user.age < rules.minAge) return false;
     if (rules.maxAge != null && user.age > rules.maxAge) return false;
@@ -65,13 +57,13 @@
     matches.forEach((scheme, index) => {
       const li = document.createElement("li");
       li.className = "scheme-card";
-      li.style.setProperty("--i", index);
+      li.style.animationDelay = `${index * 0.05}s`;
 
       li.innerHTML = `
         <div class="scheme-card__stamp" aria-hidden="true">
-          <svg viewBox="0 0 40 40" width="30" height="30">
-            <circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="1.3"/>
-            <path d="M12 20 L18 26 L29 13" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M12 20 L18 26 L29 13" stroke="currentColor" stroke-width="1.6"/>
           </svg>
         </div>
         <div class="scheme-card__body">
@@ -92,7 +84,6 @@
     const matches = SCHEMES.filter((scheme) => isEligible(user, scheme.rules));
     renderResults(matches);
 
-    // Scroll results into view on small screens
     if (window.innerWidth < 860) {
       document.getElementById("results-heading").scrollIntoView({ behavior: "smooth", block: "start" });
     }
