@@ -6,6 +6,8 @@ Live concept: a citizen answers five quick questions and instantly sees which of
 Indian government welfare schemes they're likely eligible for — no sign-up, no backend,
 no AI, nothing sent anywhere.
 
+Yojana Setu is a simple, user-friendly web application designed to help citizens identify Indian government schemes that they may be  eligible for .
+
 ## Pages
 
 | Page | What it does |
